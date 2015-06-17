@@ -2,6 +2,8 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Polaris Tandil</title>
 	<link rel="shortcut icon" href="images/favicon.ico">
 	<link rel="stylesheet" href="css/bootstrap-3.5.5/css/bootstrap.min.css" />
@@ -14,14 +16,32 @@
 			<img src="images/header.jpg" alt="Polaris Tandil" />
 
 		</header>
-		<nav>
-				<ul class="nav">
-					<li class="link_active"><a href="index.html">Home</a></li>
-					<li><a href="catalog.html">Catálogo</a></li>
-					<li ><a href="media.html">Multimedia</a></li>
-					<li><a href="contact.html">Contacto</a></li>
-				</ul>
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#">Diario</a>
+		    </div>
+
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav">
+		        <li class="active"><a href="#">Argentina<span class="sr-only">(current)</span></a></li>
+		        <li><a href="#">Mundo</a></li>
+		        <li><a href="#">Depórtes</a></li>
+		        <li><a href="#">Espectáculos</a></li>
+		      </ul>
+
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
 		</nav>
+
 		<section>
 			<p>
 				Aca va el slider
@@ -33,5 +53,9 @@
 			</div>
 		</footer>
 	</div>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="css/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>
