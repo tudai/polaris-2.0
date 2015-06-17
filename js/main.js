@@ -29,7 +29,8 @@ $(function(){
 		event.preventDefault();
 		loadPage($(this).attr('id'));
 	})
-*/		
+*/	 	
+	
 	$('#content').load("sections.html #home");
 	
 	$('nav li > a').click(function(event){
