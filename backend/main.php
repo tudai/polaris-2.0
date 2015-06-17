@@ -20,5 +20,5 @@ switch ($section){
 		$doc->loadHTMLFile("../contact.html");
 		break;
 }
-
+libxml_use_internal_errors(false);
 echo $doc->saveHTML();
