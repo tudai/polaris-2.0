@@ -2,7 +2,7 @@
 
 
 $doc = new DOMDocument();
-
+libxml_use_internal_errors(true);
 
 $section = $_GET['section'];
 
