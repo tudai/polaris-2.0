@@ -24,18 +24,18 @@ function loadPage(id){
 
 
 $(function(){
-
+	/*
 	$('nav li > a').click(function(event){
 		event.preventDefault();
 		loadPage($(this).attr('id'));
 	})
-	
+*/		
 	$('#content').load("sections.html #home");
-	/*
+	
 	$('nav li > a').click(function(event){
 		event.preventDefault();
 		$('#content').load("sections.html #"+$(this).attr('id'));
 	})
-*/	
+
 })
 
