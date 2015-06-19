@@ -17,7 +17,6 @@ function loadSection(path, target){
 		error: function(){
 			alert('se produjo un error de red, wachin');
 		}
-
 	})
 }
 
@@ -29,9 +28,9 @@ $(function(){
 		event.preventDefault();
 		loadSection($(this).attr('id'), 'content');
 	})
-	
 	$('#home').click();
 
+	$('.list-group li > a').click()
 
 
 })
