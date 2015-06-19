@@ -4,11 +4,13 @@ function getServerURL(){
 	return ((location.href.split('/'))[0])+'//'+((location.href.split('/'))[2]) + "/";
 }
 
-function loadPage(id, target){
+
+
+function loadSection(path, target){
 	
 	$.ajax({
 		method: 'GET',
-		url: getServerURL() + 'polaris-2.0/' + id + '.html',
+		url: getServerURL() + 'polaris-2.0/' +path + '.html',
 		dataType: 'html',
 		success: function(data){
 			$('#'+target).html(data);
@@ -26,7 +28,7 @@ function loadPage(id, target){
 $(function(){
 	$('nav li > a').click(function(event){
 		event.preventDefault();
-		loadPage($(this).attr('id'), 'content');
+		loadSection($(this).attr('id'), 'content');
 	})
 	
 	$('#home').click();
