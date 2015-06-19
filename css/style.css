@@ -7,4 +7,6 @@ header{
 	text-align: right;
 }
 
-
+#media-page iframe{
+	height: 430px;
+}
