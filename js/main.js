@@ -5,7 +5,7 @@ function getServerURL(){
 }
 
 function loadPage(id){
-	
+
 	$.ajax({
 		method: 'GET',
 		url: getServerURL() + 'polaris-2.0/' + id + '.html',
@@ -16,7 +16,7 @@ function loadPage(id){
 		error: function(){
 			alert('se produjo un error de red, wachin');
 		}
-		
+
 	})
 }
 
@@ -29,7 +29,7 @@ $(function(){
 		event.preventDefault();
 		loadPage($(this).attr('id'));
 	})
-	
+
 	$('#nav ').click()
 
 	
@@ -39,4 +39,3 @@ $(function(){
 	})
 
 })
-

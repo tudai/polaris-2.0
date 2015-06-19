@@ -6,7 +6,7 @@ $doc = new DOMDocument();
 $section = $_GET['section'];
 
 switch ($section){
-	case "home": 
+	case "home":
 		$doc->loadHTMLFile("../home.html", LIBXML_NOERROR);
 		break;
 	case "catalog":
