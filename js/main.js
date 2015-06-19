@@ -13,6 +13,7 @@ function loadSection(path, target){
 		dataType: 'html',
 		success: function(data){
 			$('#'+target).html(data);
+			
 		},
 		error: function(){
 			alert('se produjo un error de red, wachin');
@@ -30,7 +31,13 @@ $(function(){
 	})
 	$('#home').click();
 
-	$('.list-group li > a').click()
-
-
+	
+	$('body').on('click', '.list-group-item', function(){
+		event.preventDefault();
+		loadSection('catalog/'+$(this).attr('id'), 'catalog-content');
+		$(this).addClass('active');
+		$(this).siblings().removeClass('active');
+	})
+	
+	
 })
