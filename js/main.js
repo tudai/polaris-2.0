@@ -21,7 +21,15 @@ function loadSection(path, target){
 	})
 }
 
-
+function initialize() {
+        var mapCanvas = document.getElementById('map-canvas');
+        var mapOptions = {
+          center: new google.maps.LatLng(-37.310872, -59.116085),
+          zoom: 8,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+      }
 
 
 $(function(){
@@ -31,13 +39,13 @@ $(function(){
 	})
 	$('#home').click();
 
-	
+
 	$('body').on('click', '.list-group-item', function(){
 		event.preventDefault();
 		loadSection('catalog/'+$(this).attr('id'), 'catalog-content');
 		$(this).addClass('active');
 		$(this).siblings().removeClass('active');
 	})
-	
-	
+
+google.maps.event.addDomListener(window, 'load', initialize);
 })
