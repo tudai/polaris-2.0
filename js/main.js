@@ -7,7 +7,6 @@ function getServerURL(){
 
 
 function loadSection(path, target){
-	
 	$.ajax({
 		method: 'GET',
 		url: getServerURL() + 'polaris-2.0/' +path + '.html',
@@ -18,7 +17,7 @@ function loadSection(path, target){
 		error: function(){
 			alert('se produjo un error de red, wachin');
 		}
-		
+
 	})
 }
 
@@ -34,5 +33,5 @@ $(function(){
 	$('#home').click();
 
 
-})
 
+})
