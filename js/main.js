@@ -13,7 +13,7 @@ function loadSection(path, target){
 		dataType: 'html',
 		success: function(data){
 			$('#'+target).html(data);
-			
+			$('#'+target).trigger('htmlLoaded');
 		},
 		error: function(){
 			alert('se produjo un error de red, wachin');
