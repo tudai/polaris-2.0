@@ -27,7 +27,7 @@ function initialize() {
         var mapCanvas = document.getElementById('map-canvas');
         var mapOptions = {
           center: new google.maps.LatLng(-37.310872, -59.116085),
-          zoom: 8,
+          zoom: 18,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         }
         var map = new google.maps.Map(mapCanvas, mapOptions)
@@ -35,7 +35,7 @@ function initialize() {
 
 
 $(function(){
-	
+
 	$('body').on('click', '.list-group-item', function(){
 		event.preventDefault();
 		loadSection('catalog/'+this.id, 'catalog-content');
@@ -43,31 +43,31 @@ $(function(){
 		$(this).siblings().removeClass('active');
 	})
 
-	
+
 	$('nav li > a').click(function(event){
 		event.preventDefault();
 		loadSection(this.id, 'content');
 	})
-	
+
 	$('#catalog').click(function(event){
 		event.preventDefault();
 		loadSection(this.id, 'content', function(){
 			$('.list-group-item:first').click();
 		});
 	})
-	
-	
+
+
 	$('#contact').click(function(event){
 		event.preventDefault();
 		loadSection(this.id, 'content', function(){
 			initialize();
 		})
 	})
-	
+
 	$('#home').click();
 
-	
 
-	
-	
+
+
+
 })
