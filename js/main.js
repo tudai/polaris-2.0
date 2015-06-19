@@ -8,7 +8,7 @@ function loadPage(id){
 	
 	$.ajax({
 		method: 'GET',
-		url: getServerURL() + 'polaris-2.0/backend/main.php?section=' + id,
+		url: getServerURL() + 'polaris-2.0/' + id + '.html',
 		dataType: 'html',
 		success: function(data){
 			$('#content').html(data);
@@ -24,14 +24,14 @@ function loadPage(id){
 
 
 $(function(){
-	/*
+	$('#content').load("sections.html #home");
 	$('nav li > a').click(function(event){
 		event.preventDefault();
 		loadPage($(this).attr('id'));
 	})
-*/	 	
 	
-	$('#content').load("sections.html #home");
+	$('#nav ').click()
+
 	
 	$('nav li > a').click(function(event){
 		event.preventDefault();
