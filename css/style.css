@@ -10,3 +10,11 @@ header{
 #media-page iframe{
 	height: 430px;
 }
+
+#home-page{
+  margin: 0 200px 0 200px;
+}
+
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
