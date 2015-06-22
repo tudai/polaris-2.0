@@ -24,3 +24,6 @@ header{
   text-align: center;
   color: red;
 }
+.licontact{
+  list-style-type: none;
+}
