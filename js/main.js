@@ -4,6 +4,11 @@ function getServerURL(){
 	return ((location.href.split('/'))[0])+'//'+((location.href.split('/'))[2]) + "/";
 }
 
+function getRemoveServerURL(){
+	return "http://web-unicen.herokuapp.com/api/";
+}
+
+
 
 
 function loadSection(path, target, callback){
@@ -34,14 +39,27 @@ function initialize() {
         var map = new google.maps.Map(mapCanvas, mapOptions)
 }
 
-function login(){
-	
+function saveCatalogData(){
+	$.ajax({
+		url: getRemoteServerURL() + 'put/',
+		method: 'PUT',
+		dataType: 'json',
+		data: $('#loadData-page').find('form').serialize(),
+		contentType: "application/json; charset=utf-8",
+		success: function(result){
+			alert(result);
+		},
+		error: function(){
+			alert('algo no funcó vieja');
+		}
+		
+	})
 }
 
 
 $(function(){
 
-	$('body').on('click', '.list-group-item', function(){
+	$('body').on('click', '.list-group-item', function(event){
 		event.preventDefault();
 		loadSection('catalog/'+this.id, 'catalog-content');
 		$(this).addClass('active');
