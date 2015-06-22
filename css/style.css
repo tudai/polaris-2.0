@@ -1,5 +1,5 @@
 #map-canvas {
-  margin-top: 10px;  
+  margin-top: 10px;
   width: 100%;
   height: 300px;
 }
@@ -17,12 +17,24 @@ header{
     width: 100%;
 }
 
+#faceb-footer a{
+  color: #9d9d9d;
+}
+
 .footer{
   text-align: center;
+  margin-top: 10px;
+  background-color: #222;
+  border-radius: 4px;
+}
+#faceb-footer{
+  color: #9d9d9d;
+}
 
+.morevideos{
+  text-align: center;
 }
 
 .morevideos a{
-  text-align: center;
   color: red;
 }
