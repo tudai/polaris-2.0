@@ -14,3 +14,13 @@ header{
 .carousel-inner > .item > img {
     margin: 0 auto;
 }
+
+.footer{
+  text-align: center;
+
+}
+
+.morevideos a{
+  text-align: center;
+  color: red;
+}
