@@ -4,7 +4,7 @@ function getServerURL(){
 	return ((location.href.split('/'))[0])+'//'+((location.href.split('/'))[2]) + "/";
 }
 
-function getRemoveServerURL(){
+function getRemoteServerURL(){
 	return "http://web-unicen.herokuapp.com/api/";
 }
 
@@ -41,17 +41,17 @@ function initialize() {
 
 function saveCatalogData(){
 	var info = {
-			"group": "12",
-			"information": $('#loadData-page').find('form').serializeArray(),
+			"group": "43",
+			"thing": $('#loadData-page').find('form').serializeArray(),
 		} 
 	$.ajax({
-		url: getRemoveServerURL() + 'create/',
+		url: getRemoteServerURL() + 'create',
 		method: 'post',
 		dataType: 'json',
 		data: JSON.stringify(info),
 		contentType: "application/json; charset=utf-8",
 		success: function(result){
-			alert(result);
+			console.log(result);
 		},
 		error: function(){
 			alert('algo no funcó vieja ');
@@ -61,7 +61,17 @@ function saveCatalogData(){
 }
 
 function getCatalogData(){
-	
+	$.ajax({
+		url: getRemoteServerURL() + 'group/43',
+		method: 'get',
+		dataType: 'json',
+		success: function(data){
+			console.log(data['thing']);
+		},
+		error: function(){
+			alert('no hay caso locura, no recupera info');
+		}
+	})
 }
 
 
@@ -102,6 +112,9 @@ $(function(){
 		saveCatalogData();
 	})
 	
-
+	$('body').on('click', '#retrieveData', function(event){
+		event.preventDefault();
+		getCatalogData();
+	})
 
 })
