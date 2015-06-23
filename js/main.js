@@ -42,10 +42,10 @@ function initialize() {
 function saveCatalogData(){
 	var info = {
 			"group": "12",
-			"thing": $('#loadData-page').find('form').serializeArray(),
+			"information": $('#loadData-page').find('form').serializeArray(),
 		} 
 	$.ajax({
-		url: getRemoveServerURL() + 'group/12',
+		url: getRemoveServerURL() + 'create/',
 		method: 'post',
 		dataType: 'json',
 		data: JSON.stringify(info),
@@ -58,6 +58,10 @@ function saveCatalogData(){
 		}
 		
 	})
+}
+
+function getCatalogData(){
+	
 }
 
 
