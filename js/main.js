@@ -40,17 +40,21 @@ function initialize() {
 }
 
 function saveCatalogData(){
+	var info = {
+			"group": "12",
+			"thing": $('#loadData-page').find('form').serializeArray(),
+		} 
 	$.ajax({
-		url: getRemoteServerURL() + 'put/',
-		method: 'PUT',
+		url: getRemoveServerURL() + 'group/12',
+		method: 'post',
 		dataType: 'json',
-		data: $('#loadData-page').find('form').serialize(),
+		data: JSON.stringify(info),
 		contentType: "application/json; charset=utf-8",
 		success: function(result){
 			alert(result);
 		},
 		error: function(){
-			alert('algo no funcó vieja');
+			alert('algo no funcó vieja ');
 		}
 		
 	})
@@ -89,8 +93,11 @@ $(function(){
 
 	$('#home').click();
 
-
-
+	$('body').on('click', '#submitData', function(event){
+		event.preventDefault();
+		saveCatalogData();
+	})
+	
 
 
 })
