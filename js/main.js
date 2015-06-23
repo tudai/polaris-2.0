@@ -8,8 +8,17 @@ function getRemoteServerURL(){
 	return "http://web-unicen.herokuapp.com/api/";
 }
 
+function getGroupNumber(){
+	return 106;
+}
 
 
+/*
+ * Función generica que carga, mediante una llamada ajax, una sección de contenido html y 
+ * lo inserta dentro de otra.
+ * Params
+ * @path
+ * */
 
 function loadSection(path, target, callback){
 	$.ajax({
@@ -41,7 +50,7 @@ function initialize() {
 
 function saveCatalogData(){
 	var info = {
-			"group": "43",
+			"group": getGroupNumber(),
 			"thing": $('#loadData-page').find('form').serializeArray(),
 		} 
 	$.ajax({
@@ -62,11 +71,22 @@ function saveCatalogData(){
 
 function getCatalogData(){
 	$.ajax({
-		url: getRemoteServerURL() + 'group/43',
+		url: getRemoteServerURL() + 'group/' + getGroupNumber(),
 		method: 'get',
 		dataType: 'json',
 		success: function(data){
-			console.log(data['thing']);
+			var information = data.information;
+			var row = "";
+			
+			for(var t=0; t<information.length; t++){
+				var auto = information[t].thing;
+				row += '<tr>';
+				for(i = 0; i<auto.length; i++)
+					row += '<td>' +auto[i].value + '</td>';
+				row += '</tr>';
+			}
+				
+			$('table').append(row);	
 		},
 		error: function(){
 			alert('no hay caso locura, no recupera info');
@@ -84,6 +104,11 @@ $(function(){
 		$(this).siblings().removeClass('active');
 	})
 
+	$('body').on('click', '#tablaprecios', function(event){
+		event.preventDefault();
+		getCatalogData();
+		
+	})
 
 	$('nav li > a').click(function(event){
 		event.preventDefault();
@@ -110,11 +135,6 @@ $(function(){
 	$('body').on('click', '#submitData', function(event){
 		event.preventDefault();
 		saveCatalogData();
-	})
-	
-	$('body').on('click', '#retrieveData', function(event){
-		event.preventDefault();
-		getCatalogData();
 	})
 
 })
