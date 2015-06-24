@@ -17,6 +17,11 @@ header{
     width: 100%;
 }
 
+#catalog-content section .thumbnail .caption p:first-of-type{
+  max-height: 100px;
+  overflow: hidden;
+}
+
 #faceb-footer a{
   color: #9d9d9d;
 }
