@@ -4,8 +4,9 @@
   height: 300px;
 }
 
-header{
-	text-align: right;
+
+header .img-responsive{
+	margin: 0 auto;
 }
 
 #media-page iframe{
