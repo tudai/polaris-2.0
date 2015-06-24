@@ -8,7 +8,9 @@ header{
 	text-align: right;
 }
 
-
+#media-page iframe{
+  height: 430px;
+}
 .carousel-inner > .item > img {
     margin: 0 auto;
     width: 100%;
